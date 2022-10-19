@@ -8,7 +8,7 @@ pipeline {
         }    
         stage('DOCKER') {
             steps {
-               withDockerRegistry(credentialsId: '3a76ac10-13dd-472f-b806-4640e6dbf006', url: 'https://hub.docker.com/repository/docker/thanhgosu/testdocker') {
+               withDockerRegistry(credentialsId: '3a76ac10-13dd-472f-b806-4640e6dbf006', url: 'https://registry-1.docker.io/v2/') {
                     sh 'docker build -t thanhgosu/testdocker:v10 .'
                     sh 'docker push thanhgosu/testdocker'           
                }
