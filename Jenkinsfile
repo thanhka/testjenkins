@@ -9,7 +9,7 @@ pipeline {
         stage('DOCKER') {
             steps {
                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
-                    sh 'docker build -t thanhgosu/testdocker:v10 .'
+                    sh 'docker build -t thanhgosu/testdocker:v1 .'
                     sh 'docker push thanhgosu/testdocker'           
                }
             }
